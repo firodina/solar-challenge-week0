@@ -1,59 +1,92 @@
-Solar Dataset EDA & Cleaning Project – Progress Update
+Solar Dataset EDA & Cleaning Project
 Project Overview
 
-This stage of the project focuses on performing end-to-end data profiling, cleaning, and exploratory data analysis (EDA) on the Benin Malanville solar dataset.
-The goal at this stage is to clean and prepare the data for later comparison and region-ranking tasks.
+All tasks for the Benin Malanville solar dataset have been fully implemented and committed. The dataset is cleaned, analyzed, and ready for cross-country comparison and ranking.
 
-All work up to this point has been implemented and committed to the repository.
+✅ Progress Completed
 
-✅ Progress Implemented and Committed
+1. Git & Environment Setup
 
-1. Data Loading
+Repository solar-challenge-week0 initialized.
 
-Loaded both raw and cleaned datasets in CSV format.
+Python virtual environment (venv) set up.
 
-Used Pandas for efficient handling and exploration of the dataset.
+Branch setup-task created and merged into main.
 
-2. Data Cleaning
+Multiple commits made:
 
-Removed irrelevant column: Comments.
+init: add .gitignore
 
-Replaced negative irradiance values (GHI, DNI, DHI) with zero to maintain realistic physical limits.
+chore: venv setup
 
-Detected and treated outliers in major columns (GHI, DNI, DHI, ModA, ModB, WS, WSgust) using Z-score analysis.
+ci: add GitHub Actions workflow
 
-Outliers were either removed or imputed with the median value.
+.gitignore configured to exclude data/ and temporary files.
 
-Exported the final cleaned dataset as data/benin_clean.csv for subsequent analysis.
+requirements.txt created.
 
-3. Exploratory Data Analysis (EDA)
+GitHub Actions workflow (.github/workflows/ci.yml) added to verify environment and dependencies.
 
-Summary Statistics: Generated descriptive statistics (count, mean, std, min, max, percentiles).
+README instructions for environment setup documented.
 
-Missing Values Report: Identified and reported columns with more than 5% missing data.
+2. Data Profiling, Cleaning & EDA
 
-Time Series Analysis: Visualized solar irradiance (GHI, DNI, DHI) over time and computed daily averages.
+Branch eda-benin created.
 
-Hourly & Monthly Patterns: Analyzed how irradiance values vary across different hours of the day and months of the year.
+Notebook benin_eda.ipynb completed.
 
-Scatter & Bubble Plots: Explored relationships between GHI, temperature (Tamb), and relative humidity (RH) using scatter and bubble visualizations.
+Raw and cleaned CSVs loaded using Pandas.
 
-Correlation Heatmap: Displayed correlation relationships between key parameters such as GHI, DNI, DHI, ModA, ModB, Tamb, RH, WS, and WSgust.
+Summary statistics generated for all numeric columns.
 
-Wind Analysis: Included both wind speed distribution histograms and a wind rose plot to visualize wind direction and strength patterns.
+Columns with >5% missing values identified.
 
-4. Cleaning Impact Analysis
+Negative irradiance values (GHI, DNI, DHI) replaced with zero.
 
-Compared sensor readings (ModA & ModB) before and after cleaning to illustrate the effectiveness of the data cleaning process.
+Outliers detected using Z-score for GHI, DNI, DHI, ModA, ModB, WS, WSgust; removed or imputed with median.
 
-Visualized average readings pre- and post-cleaning using grouped bar plots.
+Cleaned dataset exported as data/benin_clean.csv.
 
-5. Optimization for Large Dataset Performance
+Time series analysis of GHI, DNI, DHI performed; daily averages computed.
 
-Handled performance challenges caused by the dataset’s large size (~525,000 rows).
+Hourly and monthly patterns visualized.
 
-Improved performance by:
+Scatter and bubble plots of GHI, Tamb, RH created.
 
-Aggregating and resampling time series data (daily/hourly) for visualization.
+Correlation heatmap of key variables completed.
 
-Reducing redundant concatenations during summary and plotting steps.
+Wind speed distribution and wind rose plots generated.
+
+Cleaning impact analysis: pre- and post-cleaning ModA & ModB compared using grouped bar plots.
+
+Performance optimization implemented for large dataset (~525,000 rows) with aggregation and reduced redundant operations.
+
+3. Cross-Country Comparison
+
+Branch compare-countries created.
+
+Notebook compare_countries.ipynb completed.
+
+Cleaned CSVs for Benin, Sierra Leone, and Togo loaded.
+
+Boxplots for GHI, DNI, DHI across countries created.
+
+Summary table of mean, median, and standard deviation for each metric generated.
+
+Statistical testing (ANOVA/Kruskal–Wallis) performed for GHI; p-values reported.
+
+Key observations documented: differences in median, variability, and averages highlighted.
+
+Visual summary chart ranking countries by average GHI completed.
+
+#. Highlights
+
+Dataset fully cleaned and validated.
+
+EDA visualizations complete (time series, scatter/bubble plots, wind rose, heatmaps).
+
+Optimized for performance on large dataset.
+
+Environment setup and CI workflow verified.
+
+Project ready for further analysis and reporting.
